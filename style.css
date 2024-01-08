@@ -1,0 +1,127 @@
+:root {
+    /* Color for Light Mode */
+    --bg-color:#F1EAFF;
+    --bg-text-color: #000;
+    --text-color: #000;
+    --keypad-bg-color: #F1EAFF;
+    --keypad-bg-color2: #fff;
+
+    /* color for Dark Mode */
+    --bg-color:#040D12;
+    --bg-text-color: #fff;
+    --text-color: #fff;
+    --keypad-bg-color: #040D12;
+    --keypad-bg-color2: #183D3D;
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.heading {
+    height: 5vh;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--text-color);
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    flex-direction: column;
+}
+.calculator {
+    height: 550px;
+    max-width: 350px;
+    padding: 20px;
+    background-color: var(--keypad-bg-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 5px solid black;
+}
+
+/* display result section */
+.display {
+    height: 20%;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: var(--bg-color);
+}
+.display input {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    font-size: 2em;
+    color: var(--text-color);
+}
+
+/* Theme Switch Section */
+.theme-switch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+.theme-toggle-label {
+    height: 20px;
+    width: 40px;
+    display: inline-block;
+    background-color: var(--keypad-bg-color2);
+    border:2px solid black;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.theme-toggle-label:after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+.theme-switch input {
+    display: none;
+}
+.theme-switch input:checked+.theme-toggle-label::after {
+    transform: translateX(20px);
+}
+
+/* Button Section */
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    height: 70%;
+}
+.keys button{
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 2em;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+button:hover {
+    background-color: green;
+    color: white;
+    transition: 1s;
+}
+.keys button.equal{
+    background-color: orange;
+}
+.keys button.equal:hover {
+    background-color: green;
+    color: white;
+    transition: 1s;
+}
